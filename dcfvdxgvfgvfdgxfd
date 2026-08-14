@@ -1,0 +1,57 @@
+const API_URL =
+  "https://jarvis-backend-xxxxx.vercel.app/api/chat";
+
+async function sendMessage() {
+
+  const input =
+    document.getElementById("message");
+
+  const message =
+    input.value.trim();
+
+  if (!message) return;
+
+  addMessage(message, "user");
+
+  input.value = "";
+
+  try {
+
+    const response = await fetch(
+      API_URL,
+      {
+        method: "POST",
+
+        headers: {
+          "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+          message: message
+        })
+      }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      throw new Error(
+        data.error || "Backend request failed"
+      );
+    }
+
+    addMessage(
+      data.answer,
+      "assistant"
+    );
+
+  } catch (error) {
+
+    console.error(error);
+
+    addMessage(
+      "Failed: " + error.message,
+      "error"
+    );
+  }
+}
