@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>JARVIS AI v2</title><link rel="stylesheet" href="style.css"></head>
+<body>
+<aside class="sidebar"><div class="brand">◈ JARVIS <small>v2</small></div>
+<button id="newChat" class="new">＋ New Chat</button><div class="label">Chats</div><div id="chatList"></div>
+<div class="sidebarBottom"><button id="voiceToggle">🎤 Voice</button><button id="themeBtn">☀️ Theme</button></div></aside>
+<main class="main"><header class="top"><div><b>JARVIS</b><span id="status">● Online</span></div>
+<div class="topActions"><label class="upload">📎 Files<input id="fileInput" type="file" multiple hidden></label><button id="clearBtn">Clear</button></div></header>
+<section id="messages" class="messages"><div class="welcome"><div class="orb">J</div><h1>How can I help?</h1><p>Chat, code, search, upload files, or talk to JARVIS.</p>
+<div class="cards"><button data-prompt="Explain how artificial intelligence works">🧠 Explain AI</button>
+<button data-prompt="Write a Python program for a number guessing game">💻 Write code</button>
+<button data-prompt="Search the web for the latest technology news">🔎 Web search</button></div></div></section>
+<div id="fileBar" class="fileBar"></div><form id="composer"><button type="button" id="micBtn">🎤</button>
+<textarea id="prompt" placeholder="Message JARVIS..." rows="1"></textarea><button type="submit">➤</button></form>
+<div class="hint">Enter to send · Shift+Enter for a new line · JARVIS may make mistakes</div></main>
+<script src="app.js"></script></body></html>
